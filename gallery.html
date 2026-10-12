@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tasty</title>
+        <link rel="stylesheet" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <nav class="navbar">
+          <div class="inner-width">
+            <a href="index.html" class="logo">Tasty Bakeshop</a>
+            <div class="navbar-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="careers.html">Careers</a>
+                <a href="articles.html">Articles</a>
+            </div>
+          </div>
+        </nav>
+        <style>
+            @import url(https://cdnjs.cloudFlare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.navbar{
+    position: fixed;
+    background-color: #900c3f;
+    width: 100%;
+    padding: 30px 0;
+    top: 0;
+    z-index: 100;
+    line-height: 20px;
+}
+.inner-width{
+    max-width: 1282px;
+    margin: auto;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    font-size: 60px;
+    font-weight: 900;
+    font-family: 'Great Vibes',sans-serif;
+    color: yellow;
+    cursor: pointer;
+}
+.navbar-menu a{
+    font-size: 13px;
+    font-weight: 800;
+    font-family: 'Raleway',sans-serif;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 35px;
+    display: inline-block;
+}
+.navbar-menu a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 1.8px;
+    background-color: #f4ca16;
+    transition: width .3s;
+}
+.navbar-menu a:hover::after{
+    width: 100%;     
+}
+        
+
+        
+        header {
+            
+            color: black;
+            padding: 10px;
+            text-align: center;
+            
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .gallery-item h3 {
+            margin: 10px 0;
+            color: #f91e96;
+        }
+        .gallery-item p {
+            padding: 0 15px;
+            color: #666;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tasty Gallery</h1>
+        <p>Your favorite bakery delights!</p>
+    </header>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="darkred.jpeg" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>A rich, moist chocolate cake topped with creamy chocolate frosting.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="cd.jpg" alt="Chocolate Naked Cake">
+            <h3>Chocolate Naked Cake</h3>
+            <p>The Naked Cake trend is making waves in weddings. It�s a beautiful alternative to the usual full frost.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="cherry.png" alt="Chocolate Birthday Cake">
+            <h3>Chocolate Birthday Cake</h3>
+            <p>chocolate birthday cake is easier than it seems. With the perfect recipe, you can amaze your guests.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="3p.jpg" alt="Vanilla cakes">
+            <h3>Vanilla cakes</h3>
+            <p>Light and fluffy cupcakes with a creamy vanilla frosting.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="italy.jpg" alt="Artisan Bread">
+            <h3>Bhowanipore cake</h3>
+            <p>Freshly baked bread with a crispy crust and soft interior.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="blue.jpg" alt="Multi Tier Cakes">
+            <h3>Multi Tier Cakes</h3>
+            <p>Flaky pastries filled with sweet fruit and a dusting of powdered sugar.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="cookies.jpg" alt="Blueberry Muffins">
+            <h3>Blueberry Muffins</h3>
+            <p>Sweet and moist muffins filled with fresh blueberries.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="choco.png" alt="Cranberry Scones">
+            <h3>Cranberry Scones</h3>
+            <p>Delicious scones filled with tart cranberries and a hint of orange zest.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="pink.jpg" alt="Fudgy Brownies">
+            <h3>Fudgy Brownies</h3>
+            <p>Rich and decadent fudgy brownies with a perfect chewy texture.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="straw.jpg" alt="Glazed Donuts">
+            <h3>Glazed Donuts</h3>
+            <p>Soft, fluffy donuts covered in a sweet, glossy glaze.</p>
+        </div>
+		<div class="gallery-item">
+            <img src="white.jpeg" alt="Glazed Donuts">
+            <h3>Glazed Donuts</h3>
+            <p>Soft, fluffy donuts covered in a sweet, glossy glaze.</p>
+        </div>
+		<div class="gallery-item">
+            <img src="bday.jpeg" alt="Cranberry Scones">
+            <h3>Cranberry Scones</h3>
+            <p>Delicious scones filled with tart cranberries and a hint of orange zest.</p>
+        </div>
+    </div>
+
+</body>
+</html>

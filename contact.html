@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty</title>
+    
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            text-decoration: none;
+            margin: 0;
+        }
+        body {
+            background-size: cover;
+        }
+        
+        /* Style inputs */
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #f4ca16;
+        }
+        
+        /* Create two columns that float next to each other */
+        .column {
+            float: left;
+            width: 45%;
+            margin-top: 6px;
+            padding: 20px;
+            padding-top: 50px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        /* Responsive layout */
+        @media screen and (max-width: 600px) {
+            .column, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        .social-container {
+            position: absolute;
+            right: 55px;
+            bottom: 30%;
+        }
+        .social-icons {
+            list-style: none;
+            position: relative;
+        }
+        .social-icons li {
+            margin: 35px 0;
+        }
+        .social-icons li i {
+            color: #04AA6D;
+            font-size: 30px;
+        }
+        .social-icons li a:hover i {
+            transform: scale(1.5);
+            color: #dd2a7b;
+            transition: all .2s ease-in-out;
+        }
+        .social-icons::before { 
+            content: "";
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 190px;
+            top: -210px;
+            left: 8px;
+            background-color: #f4ca16;
+        }
+        .social-icons::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 190px;
+            bottom: -210px;
+            left: 8px;
+            background-color: #dd2a7b;
+        }
+
+        .navbar {
+            position: fixed;
+            background-color: #900c3f;
+            width: 100%;
+            padding: 30px 0;
+            top: 0;
+            z-index: 100;
+            line-height: 20px;
+        }
+        .inner-width {
+            max-width: 1282px;
+            margin: auto;
+            padding: 0 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 60px;  
+            font-weight: 900;
+            font-family: 'Great Vibes', sans-serif;
+            color: yellow;
+            cursor: pointer;
+        }
+        .navbar-menu a {
+            font-size: 13px;
+            font-weight: 800;
+            font-family: 'Raleway', sans-serif;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-left: 35px;
+            display: inline-block;
+        }
+        .navbar-menu a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 1.8px;
+            background-color: #f4ca16 ;
+            transition: width .3s;
+        }
+        .navbar-menu a:hover::after {
+            width: 100%;     
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="inner-width">
+            <a href="index.html" class="logo">Tasty Bakeshop</a>
+            <div class="navbar-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="careers.html">Careers</a>
+                <a href="articles.html">Articles</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div style="text-align:center">
+            <h2>Contact Us</h2>
+            <p>Come and visit us! Enjoy our delicious cake and beautiful pastries.</p>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="backg.jpg" style="width:100%">
+            </div>
+            <div class="column">
+                <form action="https://www.messenger.com/login/?next=https%3A%2F%2Fwww.messenger.com%2F">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+                    <label for="country">Country</label>
+                    <select id="country" name="country" required>
+                        <option value="philippines">Philippines</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                        <option value="australia">Australia</option>
+                    </select>
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px" required></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

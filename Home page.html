@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tasty Bakeshop | Home</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #fff7f1;
+            color: #421020;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 5%;
+            background: linear-gradient(120deg, #49051e, #900c3f);
+            border-bottom: 3px solid #f4ca16;
+            box-shadow: 0 6px 20px #33001440;
+            z-index: 1000;
+        }
+
+        .inner-width {
+            max-width: 1300px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 43px;
+            font-weight: bold;
+            color: #ffe16b;
+            white-space: nowrap;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 23px;
+        }
+
+        .navbar-menu a {
+            color: white;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .3s;
+        }
+
+        .navbar-menu a:hover {
+            color: #ffe16b;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            padding: 140px 7% 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background:
+                radial-gradient(circle at 85% 30%, #f6d6b9 0, transparent 35%),
+                linear-gradient(135deg, #fff8f0, #f8e3dc);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: #ffe8a0;
+            color: #900c3f;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(55px, 7vw, 95px);
+            line-height: 1.1;
+            color: #900c3f;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #c18b00;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #674654;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* 3D BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 16px 28px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #b81551, #76062e);
+            color: white;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 1px;
+            border: 1px solid #e5ad39;
+            box-shadow: 0 7px 0 #4b031c,
+                        0 12px 20px #52051d30;
+            transition: .2s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(145deg, #f8d95b, #e2a900);
+            color: #590723;
+            box-shadow: 0 10px 0 #a77300,
+                        0 16px 25px #52051d35;
+        }
+
+        .btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #4b031c;
+        }
+
+        .btn-outline {
+            background: #fffaf5;
+            color: #900c3f;
+            box-shadow: 0 7px 0 #dfc6bd;
+        }
+
+        /* HERO IMAGE */
+        .hero-image {
+            flex: 1;
+            max-width: 530px;
+            min-width: 0;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-height: 470px;
+            object-fit: contain;
+            filter: drop-shadow(0 25px 20px #5b183b35);
+            animation: floatCake 4s ease-in-out infinite;
+        }
+
+        .cake-placeholder {
+            display: none;
+            font-size: clamp(140px, 24vw, 260px);
+            filter: drop-shadow(0 20px 15px #5b183b30);
+            animation: floatCake 4s ease-in-out infinite;
+        }
+
+        @keyframes floatCake {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* SECTION */
+        .section {
+            padding: 85px 7%;
+            text-align: center;
+        }
+
+        .section-heading {
+            font-family: 'Great Vibes', cursive;
+            color: #900c3f;
+            font-size: clamp(43px, 5vw, 65px);
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            color: #765563;
+            margin: 0 auto 45px;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        /* CAKE CARDS */
+        .cake-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .cake-card {
+            background: white;
+            padding: 18px 18px 28px;
+            border: 1px solid #f1d9c9;
+            border-radius: 22px;
+            box-shadow: 0 10px 25px #57132b12;
+            transition: .35s;
+        }
+
+        .cake-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 35px #57132b25;
+        }
+
+        .cake-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .cake-icon {
+            font-size: 85px;
+            padding: 40px 0;
+            background: #fff0e6;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .cake-card h3 {
+            color: #900c3f;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .cake-card p {
+            color: #765563;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        .cake-card .btn {
+            padding: 12px 18px;
+            width: 100%;
+        }
+
+        /* SPECIAL BANNER */
+        .special-banner {
+            margin: 20px 7% 85px;
+            padding: 55px 25px;
+            text-align: center;
+            color: white;
+            border-radius: 25px;
+            background: linear-gradient(120deg, #4b071f, #900c3f, #6b082b);
+            border: 2px solid #f4ca16;
+            box-shadow: 0 15px 30px #54072225;
+        }
+
+        .special-banner h2 {
+            font-family: 'Great Vibes', cursive;
+            color: #ffe16b;
+            font-size: clamp(40px, 5vw, 60px);
+            margin-bottom: 15px;
+        }
+
+        .special-banner p {
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .special-banner .btn {
+            background: linear-gradient(145deg, #ffe16b, #dca300);
+            color: #590723;
+            box-shadow: 0 7px 0 #976800;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #49051e;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            border-top: 3px solid #f4ca16;
+        }
+
+        footer p {
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: #ffe16b;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .inner-width {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .navbar {
+                padding: 12px 4%;
+            }
+
+            .navbar-menu {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                padding-top: 175px;
+            }
+
+            .cake-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            .logo {
+                font-size: 36px;
+            }
+
+            .navbar-menu {
+                gap: 12px;
+            }
+
+            .navbar-menu a {
+                font-size: 10px;
+            }
+
+            .hero {
+                padding: 200px 6% 60px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                width: 100%;
+            }
+
+            .cake-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 6%;
+            }
+
+            .special-banner {
+                margin: 10px 5% 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="inner-width">
+            <a href="index.html" class="logo">Tasty Bakeshop</a>
+
+            <div class="navbar-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="careers.html">Careers</a>
+                <a href="articles.html">Articles</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="eyebrow">♡ FRESHLY BAKED WITH LOVE ♡</span>
+
+            <h1>Sweet Moments,<br><span>Delicious Memories</span></h1>
+
+            <p>
+                Welcome to Tasty Bakeshop! Discover delicious cakes,
+                freshly baked treats, and sweet creations made to make
+                every celebration extra special.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="menu.html" class="btn">EXPLORE OUR MENU ↗</a>
+                <a href="about.html" class="btn btn-outline">MEET OUR TEAM ♡</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <!-- Ilisi ang cake.jpg sa actual filename sa imong cake image -->
+            <img src="cake.jpg" alt="Beautiful cake from Tasty Bakeshop"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="cake-placeholder">🎂</div>
+        </div>
+    </section>
+
+    <!-- FEATURED CAKES -->
+    <section class="section">
+        <h2 class="section-heading">Our Sweet Favorites</h2>
+
+        <p class="section-description">
+            Every bite is made to bring a smile. Find your favorite
+            sweet treat and make your day a little more special.
+        </p>
+
+        <div class="cake-grid">
+
+            <div class="cake-card">
+                <div class="cake-icon">🍫</div>
+                <h3>Chocolate Cake</h3>
+                <p>Rich chocolate flavor for every chocolate lover.</p>
+                <a href="menu.html" class="btn">VIEW MENU</a>
+            </div>
+
+            <div class="cake-card">
+                <div class="cake-icon">🍓</div>
+                <h3>Strawberry Cake</h3>
+                <p>A delightful fruity treat for your sweetest moments.</p>
+                <a href="menu.html" class="btn">VIEW MENU</a>
+            </div>
+
+            <div class="cake-card">
+                <div class="cake-icon">🧁</div>
+                <h3>Fresh Cupcakes</h3>
+                <p>Little bites of happiness, baked fresh with love.</p>
+                <a href="menu.html" class="btn">VIEW MENU</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT BANNER -->
+    <section class="special-banner">
+        <h2>Made with Love, Baked with Passion</h2>
+
+        <p>
+            Get to know the people behind your favorite sweet creations.
+            We are happy to be part of your special moments!
+        </p>
+
+        <!-- Kini mo-redirect sa imong existing About page -->
+        <a href="about.html" class="btn">DISCOVER OUR STORY ♡</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            &copy; 2026 Tasty Bakeshop. All Rights Reserved.
+        </p>
+        <p>
+            Baked with ♡ for every sweet moment.
+            | <a href="contact.html">Contact Us</a>
+        </p>
+    </footer>
+
+</body>
+</html>

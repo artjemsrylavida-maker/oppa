@@ -1,0 +1,458 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tasty Bakeshop | Login</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes"
+          rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(
+                135deg,
+                #fff8f0,
+                #ffe0e9,
+                #f8e3dc,
+                #fff0c2
+            );
+            color: #421020;
+        }
+
+        /* NAVIGATION BAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 5%;
+            background: linear-gradient(
+                120deg,
+                #49051e,
+                #900c3f
+            );
+            border-bottom: 3px solid #f4ca16;
+            box-shadow: 0 6px 20px #33001440;
+            z-index: 1000;
+        }
+
+        .inner-width {
+            max-width: 1300px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 43px;
+            font-weight: bold;
+            color: #ffe16b;
+            white-space: nowrap;
+        }
+
+        .navbar-menu {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar-menu a {
+            color: white;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .3s;
+        }
+
+        .navbar-menu a:hover {
+            color: #ffe16b;
+        }
+
+        /* LOGIN BACKGROUND */
+        .login-section {
+            min-height: 100vh;
+            padding: 150px 20px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decoration {
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.18;
+            pointer-events: none;
+        }
+
+        .decoration.left {
+            left: 5%;
+            top: 25%;
+        }
+
+        .decoration.right {
+            right: 5%;
+            bottom: 15%;
+        }
+
+        /* LOGIN CARD */
+        .login-card {
+            position: relative;
+            width: 100%;
+            max-width: 430px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid #f4ca8a;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px #57132b20;
+            text-align: center;
+        }
+
+        .login-logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(
+                135deg,
+                #900c3f,
+                #49051e
+            );
+            border: 4px solid #ffe16b;
+            box-shadow: 0 8px 18px #900c3f30;
+            font-size: 43px;
+        }
+
+        .login-card h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 55px;
+            color: #900c3f;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #765563;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        /* FORM INPUTS */
+        .input-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 800;
+            color: #900c3f;
+            margin-bottom: 9px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #e7c8d2;
+            border-radius: 12px;
+            background: #fffaf7;
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: .3s;
+        }
+
+        .input-group input:focus {
+            border-color: #900c3f;
+            box-shadow: 0 0 0 3px #900c3f15;
+        }
+
+        /* REMEMBER AND FORGOT PASSWORD */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            font-size: 12px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #674654;
+        }
+
+        .remember input {
+            accent-color: #900c3f;
+        }
+
+        .forgot {
+            color: #900c3f;
+            font-weight: bold;
+        }
+
+        .forgot:hover,
+        .register a:hover {
+            color: #c18b00;
+        }
+
+        /* 3D LOGIN BUTTON */
+        .login-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e5ad39;
+            border-radius: 12px;
+            background: linear-gradient(
+                145deg,
+                #b81551,
+                #76062e
+            );
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 7px 0 #4b031c,
+                        0 12px 20px #52051d25;
+            transition: .2s;
+        }
+
+        .login-button:hover {
+            transform: translateY(-4px);
+            background: linear-gradient(
+                145deg,
+                #f8d95b,
+                #e2a900
+            );
+            color: #590723;
+        }
+
+        .login-button:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #4b031c;
+        }
+
+        .register {
+            margin-top: 28px;
+            font-size: 13px;
+            color: #765563;
+            line-height: 1.8;
+        }
+
+        .register a {
+            color: #900c3f;
+            font-weight: 800;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 22px;
+            color: #900c3f;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #49051e;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            border-top: 3px solid #f4ca16;
+        }
+
+        footer p {
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        footer a {
+            color: #ffe16b;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 900px) {
+            .inner-width {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .navbar {
+                padding: 12px 4%;
+            }
+
+            .navbar-menu {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .login-section {
+                padding-top: 190px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 36px;
+            }
+
+            .navbar-menu a {
+                font-size: 10px;
+            }
+
+            .login-card {
+                padding: 28px 22px;
+            }
+
+            .login-card h1 {
+                font-size: 48px;
+            }
+
+            .form-options {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="inner-width">
+
+            <a href="index.html" class="logo">
+                Tasty Bakeshop
+            </a>
+
+            <div class="navbar-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="careers.html">Careers</a>
+                <a href="articles.html">Articles</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- LOGIN SECTION -->
+    <main class="login-section">
+
+        <div class="decoration left">🧁</div>
+        <div class="decoration right">🎂</div>
+
+        <div class="login-card">
+
+            <div class="login-logo">🧁</div>
+
+            <h1>Welcome Back!</h1>
+
+            <p class="subtitle">
+                Log in to Tasty Bakeshop
+                <br>
+                Sweet treats and lovely moments await you.
+            </p>
+
+            <!-- LOGIN FORM -->
+            <form action="#" method="post"
+                  onsubmit="event.preventDefault();
+                  alert('This is a demo login page. Connect a backend to log in.');">
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="artjemsrylavida@gmail.com"
+                        id="artjemsrylavida@gmail.com"
+                        name="artjemsrylavida@gmail.com"
+                        placeholder="Enter your email"
+                        autocomplete="artjemsrylavida@gmail"
+                        required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="pass123*"
+                        id="pass123*"
+                        name="pass123*"
+                        placeholder="Enter your password"
+                        autocomplete="pass123*"
+                        required>
+                </div>
+
+                <div class="form-options">
+
+                    <label class="remember">
+                        <input type="checkbox" name="remember">
+                        Remember me
+                    </label>
+
+                    <a href="forgot-password.html" class="forgot">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+                <button type="submit" class="login-button">
+                    LOG IN ♡
+                </button>
+
+            </form>
+
+            <p class="register">
+                Don't have an account?
+                <a href="Home page.html">Create Account</a>
+            </p>
+
+            <a href="about.html" class="back-home">
+                ← BACK TO HOME
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            &copy; 2026 Tasty Bakeshop. All Rights Reserved.
+        </p>
+
+        <p>
+            Baked with ♡ for every sweet moment.
+            | <a href="contact.html">Contact Us</a>
+        </p>
+    </footer>
+
+</body>
+</html>

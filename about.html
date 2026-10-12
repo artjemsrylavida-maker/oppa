@@ -1,0 +1,285 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tasty Bakeshop</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes"
+          rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: linear-gradient(
+                135deg,
+                #ffe0e9,
+                #fff0c2,
+                #f5b7cd
+            );
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: #900c3f;
+            z-index: 100;
+        }
+
+        .inner-width {
+            max-width: 1282px;
+            margin: auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 'Great Vibes', cursive;
+            color: yellow;
+        }
+
+        .navbar-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .navbar-menu a {
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            color: #f4ca16;
+        }
+
+        /* Main Background */
+        .about-section {
+            padding: 140px 20px 30px;
+            text-align: center;
+        }
+
+        .about-section h1 {
+            color: #900c3f;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .about-section p {
+            color: #6b1938;
+            font-size: 16px;
+        }
+
+        /* Center the Profile Card */
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            padding-bottom: 50px;
+        }
+
+        .column {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 18px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Picture in the Center */
+        .card img {
+            display: block;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 25px auto 15px;
+            border: 5px solid #900c3f;
+        }
+
+        .container {
+            padding: 15px 20px 25px;
+        }
+
+        .container h2 {
+            color: #900c3f;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            color: #b76e79;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .email {
+            color: #900c3f;
+            font-size: 14px;
+            margin-bottom: 20px;
+            overflow-wrap: anywhere;
+        }
+
+        .button {
+            display: inline-block;
+            width: 100%;
+            border: none;
+            border-radius: 25px;
+            padding: 12px;
+            color: white;
+            background-color: #900c3f;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c2185b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #900c3f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media screen and (max-width: 800px) {
+            .inner-width {
+                justify-content: center;
+            }
+
+            .logo {
+                font-size: 35px;
+            }
+
+            .navbar-menu {
+                justify-content: center;
+            }
+
+            .about-section {
+                padding-top: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="inner-width">
+
+            <a href="index.html" class="logo">
+                Tasty Bakeshop
+            </a>
+
+            <div class="navbar-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="careers.html">Careers</a>
+                <a href="articles.html">Articles</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h1>Meet Our Founder</h1>
+        <p>Welcome to Tasty Bakeshop!</p>
+    </section>
+
+    <!-- Centered Profile Card -->
+    <div class="row">
+
+        <div class="column">
+            <div class="card">
+
+                <img src="art.jpg" alt="Opada Artjemsry">
+
+                <div class="container">
+
+                    <h2>OPADA ARTJEMSRY L</h2>
+
+                    <p class="title">CEO &amp; Founder</p>
+
+                    <p class="description">
+                        Welcome to Tasty Bakeshop!
+                        We make delicious baked goods
+                        with love and passion.
+                    </p>
+
+                    <p class="email">
+                        artjemsrylavida@gmail.com
+                    </p>
+
+                    <button class="button"
+                        onclick="window.location.href='contact.html'">
+                        Contact Me
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+</body>
+</html>
